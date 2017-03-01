@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="copyright" content="Bennit.ai">
+    <meta name="description" content="Bennit-ai Client App">
+    <title>Bennit-ai Client App</title>
+    <!-- build:css css/main.min.css -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/conversation.css">
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <!-- endbuild -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="ct" content="vPWQz9kc-2sDXDdB6m_K5RLm_mwStA0c3cyo">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+<div>
+    <img id="logo" src="images/bennit_logo_color_highres.png"/>
+    <a href="/auth/google" class="btn btn-danger"> <img id="google-login" src="images/Google_Signin.png"/></a>
+    <img id="bennit_image" src="images/Bennit_WorkEvolved.png"/>
+
+    <!--<button id="login" onclick="myFunction()">Click me</button>
+    <div class="chat-column">
+        <div id="chat-scroll-wrapper"><div id="chat-flow"></div></div>
+        <div id="input-mic" class="inactive-mic" onclick="STTModule.micOFF()"></div>
+        <label for="user-input" class="inputOutline">
+            <input id="user-input" class="input responsive-column"
+                           placeholder="Enter response..." type="text"/>
+        </label>
+        <div id="output-audio" class="audio-on" onclick="TTSModule.toggle()" value="ON"></div>
+    </div>-->
+</div>
+<!-- build:js vendor.min.js -->
+<!--<script src="js/libs/snap.svg.js"></script>
+<script src="./../node_modules/whatwg-fetch/fetch.js"></script>-->
+<!--     endbuild
+     build:js Bennit.min.js
+    <script src="js/common.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/tooltip-dialogs.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/panel.js"></script>
+    <script src="js/conversation.js"></script>
+    <script src="js/conversationResponse.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/ui_tests/tests.js"></script>
+     endbuild -->
+<script src="ibm/watson-speech.min.js"></script>
+<script src="ibm/speech-to-text.js"></script>
+<script src="ibm/text-to-speech.js"></script>
+</body>

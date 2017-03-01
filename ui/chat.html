@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="copyright" content="Bennit.ai">
+    <meta name="description" content="Bennit-ai Client App">
+    <title>Bennit-ai Client App</title>
+    <!-- build:css css/main.min.css -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/conversation.css">
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
+    <!-- endbuild -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="ct" content="vPWQz9kc-2sDXDdB6m_K5RLm_mwStA0c3cyo">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+<div> <!-- class="chat_and_info_area"> -->
+    <!-- <div class="chat_area" style="float : left"> -->
+        <img id="logo" src="images/bennit_logo_color_highres.png"/>
+
+        <div class="chat-column">
+            <div id="chat-scroll-wrapper"><div id="chat-flow"></div></div>
+            <div id="input-mic" class="inactive-mic" onclick="STTModule.micOFF()"></div>
+            <label for="user-input" class="inputOutline">
+                <input id="user-input" class="input responsive-column"
+                       placeholder="Enter response..." type="text"/>
+            </label>
+            <div id="output-audio" class="audio-on" onclick="TTSModule.toggle()" value="ON"></div>
+        </div>
+ </div>
+
+ <div> <!-- class="user_info" style="float : right"> -->
+       <ul class="tab">
+            <li><a href="javascript:void(0)" class="tablinks" onclick="openIntent(event, 'Registration')"><b>Registration</b></a></li>
+            <li><a href="javascript:void(0)" class="tablinks" onclick="openIntent(event, 'WorkLifeDiary')"><b>Work-Life Diary</b></a></li>
+            <li><a href="javascript:void(0)" class="tablinks" onclick="openIntent(event, 'SafetyEvents')"><b>Events</b></a></li>
+            <li><a href="javascript:void(0)" class="tablinks" onclick="openIntent(event, 'Contribute')"><b>Contribute</b></a></li>
+            <li><a href="javascript:void(0)" class="tablinks" onclick="openIntent(event, 'Reports')"><b>Reports</b></a></li>
+            <li><a href="javascript:void(0)" class="tablinks" onclick="openIntent(event, 'Score')"><b>Scoring</b></a></li>
+            <li><a href="javascript:void(0)" class="tablinks" onclick="openIntent(event, 'Other')"><b>Other</b></a></li>
+            <li><a href="javascript:void(0)" class="tablinks" onclick="openIntent(event, 'Home')"><b>Home</b></a></li>
+        </ul>
+
+        <div id="Registration" class="tabcontent">
+            <!-- <h3>Registration</h3> -->
+            <p><b>Registration</b>: Via your Google login, Bennit authenticates you as an unique user and gets access to basic details such as your name and family name if specified. Registration involves providing basic information such as:
+                where you work, your role at work, the business division or area that your work in, your main area of expertise, your interests or activities that you like, your favorite color,
+                and any goal that you would like to capture for progress tracking purposes. <br>
+                <b>Keywords to change user details</b>: change, modify, update, change user details, etc. <br>
+                <b>Keywords to exit registration and other conversation flows</b>: cancel, done, stop, exit, interrupt, etc.   <br> <br>
+                <b>Colors</b>: <br>
+                <img id="favcolors" src="images/FavColors3.png"/> <br>
+                <b>Interests and Activities examples</b>:
+                <ul>
+                  <li><em>Health</em>: Yoga, Meditation, Exercising and body building, Participating in marathons, Jumping rope, Swimming, Martial arts, Fitness counseling, Recipe creation </li>
+                  <li><em>Sports & Adventure</em>: Scuba diving, River rafting, Bungee jumping, Skiing, Trekking, Ice skating, Surfing, Racing, Gymnastics, Hunting </li>
+                  <li><em>Outdoor</em>: Fishing, Archery, Boating, Traveling, Camping, Kayaking, Kart racing, Golfing, Swimming, Skateboarding </li>
+                  <li><em>Indoor</em>: Playing cards, Tarot card reading, Playing board games, Watching movies, Cubing, Bowling, Billiards, Ping pong/table tennis, Pottery </li>
+                  <li><em>Lifestyle</em>: Wine tasting, Shopping for latest trends, Food critic, Pet training and grooming, Collecting vintage items, Hosting parties, Collecting precious gems, Traveling and exploration </li>
+                  <li><em>Creative</em>: Cook foods in disguise, Painting, Graffiti art, Creative writing, Dancing/choreography, Singing/composing music, Sculpting, Model building, Interior decorating, Jewelry-making </li>
+                  <li><em>Computers & Technology</em>: Computer games, Video gaming, Social networking, Keeping virtual pets, Creating software, Internet browsing, Blogging, Building computers and robots</li>
+                  <li><em>Nature</em>: Recycling, Organic farming, Composting, Landscape gardening, Hydroponic gardening, Making birdfeeders/birdhouses, Creating art from used material, Making recycled paper, Animal care </li>
+                  <li><em>Collection</em>: Collecting seashells, stamps, fossils and rocks, dried flowers, butterflies, comic books, coins, photographs of people you meet, bird feathers, visiting/greeting card </li>
+                  <li><em>Observational</em>: Birdwatching, Geocaching, Photography, Cloud watching, Stargazing, People watching, Herping, Amateur meteorology, Reading</li>
+                </ul>
+            </p>
+        </div>
+        <div id="WorkLifeDiary" class="tabcontent">
+            <!-- <h3>Work-Life Diary</h3> -->
+            <p> <h4> Start-of-Day </h4>
+                <b>Keywords</b>: start, starting, start shift, another day, new day, etc.  <br>
+                <b>Questions</b>: <br>
+                Anything major planned for the day? <br>
+                Anything that might impact production today? <br>
+                How are you feeling today? (1) Good / Excellent (2) Bad (3) Stressed (4) Motivated (5) Other
+                <h4>Leaving / End-of-Day </h4>
+                <b>Keywords</b>: leaving, go, going home, goodbye, bye, signing off, etc. <br>
+                <b>Questions</b>: <br>
+                Please rate the following on a scale from 1 (very poor) - 2 (poor) - 3 (ok) - 4 (good) - 5 (excellent):
+                <ul>
+                    <li>Happiness at work today</li>
+                    <li>Production performance/ quality today</li>
+                    <li>Collaboration experience at work today</li>
+                    <li>Productivity at work today</li>
+                    <li>Safety at work today</li>
+                    <li>Risk at work today</li>
+                </ul>
+                Any Issues today?  <br>
+                Any Positives that you want to highlight? <br>
+                What progress have you made towards your goal?
+            </p>
+        </div>
+        <div id="SafetyEvents" class="tabcontent">
+            <!-- <h3>Safety & Events</h3> -->
+            <p><h4> Safety </h4>
+            <b>Keywords</b>: danger, emergency, near miss, need assistance, safety, risk, crisis, etc.  <br>
+            <b>Questions</b>: <br>
+            Is something wrong? <br>
+            Do you need help? <br>
+            Please describe the safety issue. <br>
+            Are there any additional information that  should be recorded (e.g., video, last 2 minutes of audio, etc.)?
+            <h4>Other Events </h4>
+            <b>Keywords</b>: event, capture event, occasion, record event, situation, ceremony, celebration, etc. <br>
+            <b>Questions</b>: <br>
+            What special event do you like to capture today?
+            </p>
+        </div>
+        <div id="Contribute" class="tabcontent">
+            <!-- <h3>Contribute</h3> -->
+            <p><h4> Ideas </h4>
+            <b>Keywords</b>: idea, contribute, suggestion, advice, improve, inputs, improvement, etc.  <br>
+            <b>Questions</b>: <br>
+            Ideas on how Bennit can help you save time at work? <br>
+            (1) <em>Productivity</em>: How can Bennit help you to become more productive? <br>
+            (2) <em>Safety</em>: How can Bennit help improve safety at work? <br>
+            (3) <em>Performance/Quality</em>: How can Bennit help with improving performance and quality KPIs? <br>
+            (4) <em>Advice</em>: What type of advice would help you at work? <br>
+            (5) <em>Knowledge</em>: hat knowledge topics are your interested in? <br>
+            (6) <em>Risk</em>: How can Bennit help to reduce risk at work? <br>
+            (7) <em>Other</em>: Ideas on how Bennit can help you at work?
+            <h4>Feedback and recommendations </h4>
+            <b>Keywords</b>: feedback, assessment, evaluate, comment, observation, observe, react, recommendation, etc. <br>
+            <b>Questions</b>: <br>
+            App experience: Feedback and recommendations with respect to current Bennit functionality <br>
+            (1) Please rate your Bennit app experience on a scale from 1 (very poor) - 2 (poor) - 3 (ok) - 4 (good) - 5 (excellent) <br>
+            (2) What do you like the most? <br>
+            (3) What do you like the least? <br>
+            (4) What feedback and recommendations do you have that would help to improve the Bennit experience?
+            </p>
+        </div>
+        <div id="Reports" class="tabcontent">
+            <!-- <h3>Reports</h3> -->
+            <p><b>Keywords</b>: report, reports, show, etc.  <br>
+            <b>Reports</b>:
+            <ul>
+                <li><em>Registration / Introduction Report</em>: Keywords: registration, intro, introduction, onboarding, etc. </li>
+                <li><em>Start-of-Day Report</em>: Keywords: Start-of-Day, start, etc. </li>
+                <li><em>End-of-Day Report</em>: Keywords: Leaving, End-of-Day, end day, etc. </li>
+                <li><em>Safety Report</em>: Keywords: Safety, near miss, etc. </li>
+                <li><em>Contribution Report</em>: Keywords: contribution, feedback, idea, recommendations, etc. </li>
+                <li><em>Scoring Report</em>: Keywords: Score, scoring, game status, etc. </li>
+                <li><em>Survey / Discovery Report</em>: Keywords: survey, discovery, etc. </li>
+                <li><em>Equipment Report</em>: Keywords: equipment, machines, performance, etc. </li>
+                <li><em>Insights Report</em>: Keywords: Insight, analysis : Not currently available: Focus on analysis, insights, app usage, physical location of usage, engagement, etc.  </li>
+            </ul>
+            </p>
+        </div>
+        <div id="Score" class="tabcontent">
+            <!-- <h3>Scoring</h3> -->
+            <p> <b>Keywords</b>: score, achieve, count, game score, game status, grade, tally, etc.  <br>
+                <b>Bennit Score</b>: Your current score to measure your Bennit interaction, use and contributions<br>
+                <b>Scoring System</b>: The Bennit scoring system currently rewards application usage, interactions and contributions:
+                <ul>
+                    <li><em> User details </em>: Keep user details up-to-date: +2 points </li>
+                    <li><em>Work-life diary</em>:
+                        <br> Start-the-day: +5 points every day
+                        <br> Leaving: +10 points every day </li>
+                    <li><em>Contribute</em>:
+                        <br> Ideas: +5 points
+                        <br> Feedback: +5 points </li>
+                    <li><em>Safety</em>: Capture incident: +5 points </li>
+                    <li><em>Events</em>: Capture special event: +5 points </li>
+                    <li><em>Reports</em>: View reports: +3 points </li>
+                </ul>
+            </p>
+        </div>>
+        <div id="Other" class="tabcontent">
+            <!-- <h3>Other Intents</h3> -->
+            <p>
+                <b>Keywords for other Intents</b>:
+                <ul>
+                    <li><em>Change</em>: change, modify, update, change user details, etc. </li>
+                    <li><em>Learn</em>: learn, domain expertise, information, knowledge, learning, new, etc. </li>
+                    <li><em>Discovery / Survey</em>:  discovery, survey, etc. </li>
+                    <li><em>Register</em> (to register a machine or a sensor tag device):  register, device, link, identify, etc. </li>
+                    <li><em>Greetings</em>:  greeting, hi, hello, howdy,  etc. </li>
+                    <li><em>Thanks</em>: thanks, acknowledgement, credit, like, nice, great, gratitude, etc. </li>
+                    <li><em>Curse</em>: a variety of curse words </li>
+                    <li><em>Funny</em>: funny, ha, ha ha, smile, etc. </li>
+                    <li><em>Dumb</em>: dumb, stupid, naive, negative, etc. </li>
+                    <li><em>Recommendation</em>: help me, what can you do for me, advice, etc.  </li>
+                    <li><em>Schedule</em>: schedule, arrange meeting, please book, etc. (N/A) </li>
+                    <li><em>Phone</em>: call, phone, answer, make a call, etc. (N/A) </li>
+                    <li><em>Weather</em>: check the weather, tell me the weather, etc. (N/A) </li>
+                </ul>
+            </p>
+        </div>
+     <div id="Home" class="tabcontent">
+         <!-- <h3>Other Intents</h3> -->
+         <p>
+             <img id="bennit_image_chat" src="images/Bennit_WorkEvolved.png"/>
+         </p>
+     </div>
+ <!--   </div>  -->
+</div>
+
+<!-- build:js vendor.min.js -->
+<!--<script src="js/libs/snap.svg.js"></script>
+<script src="./../node_modules/whatwg-fetch/fetch.js"></script>-->
+<!-- endbuild -->
+<!-- build:js Bennit.min.js -->
+<script src="js/common.js"></script>
+<script src="js/api.js"></script>
+<script src="js/tab.js"></script>
+<!-- <script src="js/sidebar.js"></script>
+ <script src="js/tooltip-dialogs.js"></script>
+ <script src="js/animations.js"><thisis a test/script>
+ <script src="js/panel.js"></script>-->
+<script src="js/conversation.js"></script>
+<script src="js/conversationResponse.js"></script>
+<script src="js/global.js"></script>
+<script src="js/ui_tests/tests.js"></script>
+<!-- endbuild -->
+<script src="ibm/watson-speech.min.js"></script>
+<script src="ibm/speech-to-text.js"></script>
+<script src="ibm/text-to-speech.js"></script>
+
+</body>
+
+</html>
