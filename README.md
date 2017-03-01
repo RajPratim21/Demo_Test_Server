@@ -82,3 +82,7 @@ You will update the `.env` with the information you retrieved in steps 6 - 9.
  ![](readme_images/Bennit_demo.png)
 
  ![](readme_images/demo_ben2.png)
+
+ ### Facebook chatbot demo with sliding window functunality..
+
+  ![](readme_images/FB_demo.png)
