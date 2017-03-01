@@ -9,7 +9,17 @@ this is the backend for the webapp as well as FB chatbot that is also currenly b
 
 1. Go to https://bluemix.net/
 2. Create a Bluemix account if required.
-3. Log in with your IBM ID (the ID used to create your Bluemix account) 
+3. Log in with your IBM ID (the ID used to create your Bluemix account)
+4. Once on the Service details page, scroll down (if necessary) and click green **Launch tool** button on the right hand side of the page. (You may be asked to log in again. or you may see a blank screen - give it a few minutes and refresh the screen). This will launch the tooling for the Conversation service, which allows you to build dialog flows and train your chatbot. This should take you to your workspace in the Conversation service which represents a unique set of chat flows and training examples. This allows you to have multiple chatbots within a single instance of the Conversation service.
+
+5. Once on the page, you will see the option to either “Create” a new workspace, or “import” an existing one. We are going to “import” a premade chatbot for this example, so select “Import".
+
+6. Click **Choose a file**, navigate to the `resources` directory of your clone of the repository for this project, and select the file `conversation-training-data.json`.  Once the file is selected, ensure that the “Everything (Intents, Entities, and Dialog” option is selected.
+
+7. Click **Import** to upload the `.json` file to create a workspace and train the model used by the Conversation service.To find your workspace ID once training has completed, click the three vertical dots in the upper right-hand corner of the Workspace pane, and select **View details**.  Once the upload is complete, you will see a new workspace called “Weather Bot ASK”. In order to connect this workspace to our application, we will need to include the Workspace ID in our environment variables file “.env”.  
+
+ Go back into your “.env” file, and paste the workspace ID next to the “WORKSPACE_ID=” entry.
+
 
 **Note:** The confirmation email from Bluemix mail take up to 1 hour.
 
